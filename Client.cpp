@@ -591,7 +591,7 @@ void timeLossTest(TCPClient * c, TimeLossSettings * tlc)
 
     for(int i = 0; i < tlc->numberOfIterations; i++)
     {
-        sleep(60);
+        sleep(0);
 
         c->send("function getHistogram\n");
         c->send("0\n");
@@ -1001,12 +1001,12 @@ int main(int argc, char* argv[])
 
         TimeLossSettings * tlc = new TimeLossSettings();
 
-        tlc->numberOfIterations = 1000;
+        tlc->numberOfIterations = 0;
 
-        tlc->threshold = 20; // [mV] // signal threshold
+        tlc->threshold = 15; // [mV] // signal threshold
 
         tlc->saveToFile = true;
-        tlc->printSomeData = true;
+        tlc->printSomeData = false;
 
         /// ************************************
 
